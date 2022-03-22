@@ -1,0 +1,33 @@
+#include"stdio.h"
+#include"string.h"
+#define A 100
+#define B 50
+int main()
+{
+	char ch[A],ch1[B];
+	int x,i,j=0,t=0,c,a=0;
+	printf("请输入一个英语句子:\n");
+	gets(ch);
+	printf("请输入一串字符:\n");
+	gets(ch1);
+	x=strlen(ch);
+	strlwr(ch);
+	strlwr(ch1);
+	for(i=0;i<x;i++)
+	{
+		if(ch1[j]!=ch[i])
+			j=0;
+		else
+			j++;
+		if(ch1[j]=='\0')
+			a=1;
+		if(a==1)
+		{
+			t++;
+			a=0;
+			j=0;
+		}
+	}
+	printf("字符个数有:%d个\n",t);
+	return 0;
+}
